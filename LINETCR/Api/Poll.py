@@ -18,8 +18,8 @@ class Poll:
   host = "gd2.line.naver.jp";
   port = 443;
 
-  UA = "Line/1.7.14"
-  LA = "CHROMEOS\t1.7.14\tChrome_OS\t1"      
+  UA = "Line/2018.07421.2455.Tanduri/5.7.0 WIN10/18.2.1"
+  LA = "DESKTOPMAC 8.5.2 HELLO-WORLD 12.13.2"      
 
   rev = 0
 
@@ -40,7 +40,7 @@ class Poll:
     #usleep = lambda x: time.sleep(x/1000000.0)
     while True:
       try:
-        Ops = self.client.fetchOps(self.rev, 5)
+        Ops = self.client.fetchOps(self.rev, 50)
       except EOFError:
         raise Exception("It might be wrong revision\n" + str(self.rev))
 
